@@ -19,6 +19,8 @@ public class CheckoutSolution {
         Map<java.lang.Character, java.lang.String> specialOffers = new java.util.HashMap<>();
         specialOffers.put('A', "3A for 130");
         specialOffers.put('B', "2B for 45");
+        specialOffers.put('C', "No offer");
+        specialOffers.put('D', "No offer");
 
         Map<java.lang.Character, java.lang.Integer> count = new java.util.HashMap<>();
 
@@ -38,7 +40,6 @@ public class CheckoutSolution {
         for(Map.Entry<java.lang.Character, java.lang.Integer> entry : count.entrySet()){
             java.lang.Character item = entry.getKey();
             java.lang.Integer countValue = entry.getValue();
-
             if(specialOffers.get(item).equals("3A for 130")){
                 java.lang.Integer offerPrice = 130;
                 java.lang.Integer offerQuantity = 3;
@@ -60,6 +61,7 @@ public class CheckoutSolution {
     }
 
 }
+
 
 
 
