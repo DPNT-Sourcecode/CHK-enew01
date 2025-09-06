@@ -1,8 +1,8 @@
 package io.accelerate.solutions.CHK;
 
 import io.accelerate.runner.SolutionNotImplementedException;
+import java.util.HashMap;
 import java.util.Map;
-import java.*;
 
 public class CheckoutSolution {
 
@@ -10,18 +10,18 @@ public class CheckoutSolution {
 
     public Integer checkout(String skus) {
 
-        java.util.Map<char, int> prices = new HashMap<>();
+        java.util.Map<char, int> prices = new java.util.HashMap<>();
         prices.put("A", 50);
         prices.put('B', 30);
         prices.put('C', 20);
         prices.put('D', 15);
 
-        Map<char, String> specialOffers = new HashMap<>();
+        Map<char, java.lang.String> specialOffers = new HashMap<>();
         specialOffers.put('A', "3A for 130");
         specialOffers.put('B', "2B for 45");
 
 
-        charList = skus.toCharArray();
+        char[] charList = skus.toCharArray();
 
         Map<char, Integer> count = new HashMap<>();
 
@@ -61,4 +61,5 @@ public class CheckoutSolution {
     }
 
 }
+
 
