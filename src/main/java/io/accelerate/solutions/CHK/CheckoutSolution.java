@@ -15,7 +15,7 @@ public class CheckoutSolution {
         prices.put('B', 30);
         prices.put('C', 20);
         prices.put('D', 15);
-        prices.put('E', 40)
+        prices.put('E', 40);
 
         Map<java.lang.Character, java.lang.String[]> specialOffers = new java.util.HashMap<>();
         specialOffers.put('A', new java.lang.String[]{"3A for 130", "5A for 200"});
@@ -49,19 +49,19 @@ public class CheckoutSolution {
                 java.lang.Integer offerPrice1 = 200;
                 java.lang.Integer offerQuantity1 = 5;
 
-                java.lang.Integer total1 += (countValue/offerQuantity1) * offerPrice1 + (countValue%offerQuantity1) * prices.get(item);
-                java.lang.Integer total2 += (countValue/offerQuantity2) * offerPrice2 + (countValue%offerQuantity2) * prices.get(item);
+                java.lang.Integer total1 = ((countValue/offerQuantity1) * offerPrice1 + (countValue%offerQuantity1) * prices.get(item));
+                java.lang.Integer total2 = ((countValue/offerQuantity2) * offerPrice2 + (countValue%offerQuantity2) * prices.get(item));
 
                 if(total1 > total2){
-                    totalCost += total2
+                    totalCost += total2;
                 }else{
-                    totalCost += total1
+                    totalCost += total1;
                 }
             }else{
                 if(item == 'B'){
                     java.lang.Integer offerPrice = 45;
                     java.lang.Integer offerQuantity = 2;
-                }
+
                     totalCost += (countValue/offerQuantity) * offerPrice + (countValue%offerQuantity) * prices.get(item);
                 }else{
                     if(item == 'E'){
@@ -70,34 +70,21 @@ public class CheckoutSolution {
                         java.lang.Integer freeB = countValue/offerQuantityE;
                         java.lang.Integer totalE = (countValue/offerQuantityE) * prices.get(item)* offerQuantityE;
                         if(0 > countValue - freeB){
-                            java.lang.Integer totalB = 0
+                            java.lang.Integer totalB = 0;
                         }else{
-                            java.lang.Integer totalB = freeB * prices.get('B')
+                            java.lang.Integer totalB = freeB * prices.get('B');
                         }
 
                     }else{
                         totalCost += countValue * prices.get(item);
                     }
             }
-
-            /*if(specialOffers.get(item).equals("3A for 130")){
-                java.lang.Integer offerPrice = 130;
-                java.lang.Integer offerQuantity = 3;
-
-            }else{
-                if(specialOffers.get(item).equals("2B for 45")){
-                    java.lang.Integer offerPrice = 45;
-                    java.lang.Integer offerQuantity = 2;
-
-                    totalCost += ;
-                }else{
-
-                }
-            }*/
+            }
         }
 
         return totalCost;
     }
 
 }
+
 
