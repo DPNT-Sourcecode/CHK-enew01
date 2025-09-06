@@ -9,7 +9,7 @@ public class CheckoutSolution {
 
 
     public Integer checkout(String skus) {
-
+        skus = skus.trim();
         java.util.Map<java.lang.Character, java.lang.Integer> prices = new java.util.HashMap<>();
         prices.put('A', 50);
         prices.put('B', 30);
@@ -60,6 +60,7 @@ public class CheckoutSolution {
     }
 
 }
+
 
 
 
