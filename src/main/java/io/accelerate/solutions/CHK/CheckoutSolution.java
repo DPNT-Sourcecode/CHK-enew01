@@ -11,7 +11,7 @@ public class CheckoutSolution {
     public Integer checkout(String skus) {
 
         java.util.Map<java.lang.Character, java.lang.Integer> prices = new java.util.HashMap<>();
-        prices.put("A", 50);
+        prices.put('A', 50);
         prices.put('B', 30);
         prices.put('C', 20);
         prices.put('D', 15);
@@ -20,8 +20,8 @@ public class CheckoutSolution {
         specialOffers.put('A', "3A for 130");
         specialOffers.put('B', "2B for 45");
 
-
-        java.lang.Character[] charList = skus.toCharArray();
+        char[] charList = skus.toCharArray();
+        Character[] charObjectArray = java.util.Arrays.toObject(charList);
 
         Map<java.lang.Character, java.lang.Integer> count = new java.util.HashMap<>();
 
@@ -63,6 +63,7 @@ public class CheckoutSolution {
     }
 
 }
+
 
 
 
