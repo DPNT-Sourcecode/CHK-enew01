@@ -1,6 +1,8 @@
 package io.accelerate.solutions.CHK;
 
 import io.accelerate.runner.SolutionNotImplementedException;
+import java.util.Map;
+import java.*;
 
 public class CheckoutSolution {
 
@@ -8,7 +10,7 @@ public class CheckoutSolution {
 
     public Integer checkout(String skus) {
 
-        Map<char, int> prices = new HashMap<>();
+        java.util.Map<char, int> prices = new HashMap<>();
         prices.put("A", 50);
         prices.put('B', 30);
         prices.put('C', 20);
@@ -34,11 +36,6 @@ public class CheckoutSolution {
             }
         }
 
-        return calculatePrice(count);
-    }
-
-
-    public Integer calculatePrice(Map<char, int> count){
         int totalCost = 0;
 
         for(Map.Entry<char, int> entry : count.entrySet()){
@@ -62,4 +59,6 @@ public class CheckoutSolution {
         }
         return totalCost;
     }
+
 }
+
