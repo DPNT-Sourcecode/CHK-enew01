@@ -10,22 +10,22 @@ public class CheckoutSolution {
 
     public Integer checkout(String skus) {
 
-        java.util.Map<char, int> prices = new java.util.HashMap<>();
+        java.util.Map<java.lang.Character, java.lang.Integer> prices = new java.util.HashMap<>();
         prices.put("A", 50);
         prices.put('B', 30);
         prices.put('C', 20);
         prices.put('D', 15);
 
-        Map<char, java.lang.String> specialOffers = new HashMap<>();
+        Map<java.lang.Character, java.lang.String> specialOffers = new java.util.HashMap<>();
         specialOffers.put('A', "3A for 130");
         specialOffers.put('B', "2B for 45");
 
 
-        char[] charList = skus.toCharArray();
+        java.lang.Character[] charList = skus.toCharArray();
 
-        Map<char, Integer> count = new HashMap<>();
+        Map<java.lang.Character, java.lang.Integer> count = new java.util.HashMap<>();
 
-        for(int i = 0; i < charList.length(); i++){
+        for(int i = 0; i < charList.length; i++){
             if(!prices.containsKey(charList[i])){
                 return -1;
             }
@@ -36,30 +36,33 @@ public class CheckoutSolution {
             }
         }
 
-        int totalCost = 0;
+        java.lang.Integer totalCost = 0;
 
-        for(Map.Entry<char, int> entry : count.entrySet()){
-            char item = entry.getKey();
-            int countValue = entry.getValue();
-        }
-        if(specialOffers.get(item).equals("3A for 130")){
-            int offerPrice = 130;
-            int offerQuantity = 3;
-            totalCost += (countValue/offerQuantity) * offerPrice;
-            totalCost += (countValue%offerQuantity) * prices.get(item);
-        }else{
-            if(specialOffers.get(item).equals("2B for 45")){
-                int offerPrice = 45;
-                int offerQuantity = 2;
+        for(Map.Entry<java.lang.Character, java.lang.Integer> entry : count.entrySet()){
+            java.lang.Character item = entry.getKey();
+            java.lang.Integer countValue = entry.getValue();
+
+            if(specialOffers.get(item).equals("3A for 130")){
+                java.lang.Integer offerPrice = 130;
+                java.lang.Integer offerQuantity = 3;
                 totalCost += (countValue/offerQuantity) * offerPrice;
                 totalCost += (countValue%offerQuantity) * prices.get(item);
             }else{
-                totalCost += count * prices.get(item);
+                if(specialOffers.get(item).equals("2B for 45")){
+                    java.lang.Integer offerPrice = 45;
+                    java.lang.Integer offerQuantity = 2;
+                    totalCost += (countValue/offerQuantity) * offerPrice;
+                    totalCost += (countValue%offerQuantity) * prices.get(item);
+                }else{
+                    totalCost += count * prices.get(item);
+                }
             }
         }
+
         return totalCost;
     }
 
 }
+
 
 
