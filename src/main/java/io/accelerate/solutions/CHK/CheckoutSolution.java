@@ -42,19 +42,56 @@ public class CheckoutSolution {
         for(Map.Entry<java.lang.Character, java.lang.Integer> entry : count.entrySet()){
             java.lang.Character item = entry.getKey();
             java.lang.Integer countValue = entry.getValue();
+
+            if(item == 'A'){
+                java.lang.Integer offerPrice1 = 130;
+                java.lang.Integer offerQuantity1 = 3;
+                java.lang.Integer offerPrice1 = 200;
+                java.lang.Integer offerQuantity1 = 5;
+
+                java.lang.Integer total1 += (countValue/offerQuantity1) * offerPrice1 + (countValue%offerQuantity1) * prices.get(item);
+                java.lang.Integer total2 += (countValue/offerQuantity2) * offerPrice2 + (countValue%offerQuantity2) * prices.get(item);
+
+                if(total1 > total2){
+                    totalCost += total2
+                }else{
+                    totalCost += total1
+                }
+            }else{
+                if(item == 'B'){
+                    java.lang.Integer offerPrice = 45;
+                    java.lang.Integer offerQuantity = 2;
+                }
+                    totalCost += (countValue/offerQuantity) * offerPrice + (countValue%offerQuantity) * prices.get(item);
+                }else{
+                    if(item == 'E'){
+                        java.lang.Integer offerQuantityB = 1;
+                        java.lang.Integer offerQuantityE = 2;
+                        java.lang.Integer freeB = countValue/offerQuantityE;
+                        java.lang.Integer totalE = (countValue/offerQuantityE) * prices.get(item)* offerQuantityE;
+                        if(0 > countValue - freeB){
+                            java.lang.Integer totalB = 0
+                        }else{
+                            java.lang.Integer totalB = freeB * prices.get('B')
+                        }
+
+                    }else{
+                        totalCost += countValue * prices.get(item);
+                    }
+            }
+
             /*if(specialOffers.get(item).equals("3A for 130")){
                 java.lang.Integer offerPrice = 130;
                 java.lang.Integer offerQuantity = 3;
-                totalCost += (countValue/offerQuantity) * offerPrice;
-                totalCost += (countValue%offerQuantity) * prices.get(item);
+
             }else{
                 if(specialOffers.get(item).equals("2B for 45")){
                     java.lang.Integer offerPrice = 45;
                     java.lang.Integer offerQuantity = 2;
-                    totalCost += (countValue/offerQuantity) * offerPrice;
-                    totalCost += (countValue%offerQuantity) * prices.get(item);
+
+                    totalCost += ;
                 }else{
-                    totalCost += countValue * prices.get(item);
+
                 }
             }*/
         }
@@ -63,3 +100,4 @@ public class CheckoutSolution {
     }
 
 }
+
