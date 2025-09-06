@@ -46,8 +46,8 @@ public class CheckoutSolution {
             if(item == 'A'){
                 java.lang.Integer offerPrice1 = 130;
                 java.lang.Integer offerQuantity1 = 3;
-                java.lang.Integer offerPrice1 = 200;
-                java.lang.Integer offerQuantity1 = 5;
+                java.lang.Integer offerPrice2 = 200;
+                java.lang.Integer offerQuantity2 = 5;
 
                 java.lang.Integer total1 = ((countValue/offerQuantity1) * offerPrice1 + (countValue%offerQuantity1) * prices.get(item));
                 java.lang.Integer total2 = ((countValue/offerQuantity2) * offerPrice2 + (countValue%offerQuantity2) * prices.get(item));
@@ -86,5 +86,6 @@ public class CheckoutSolution {
     }
 
 }
+
 
 
