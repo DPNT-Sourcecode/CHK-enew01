@@ -20,19 +20,16 @@ public class CheckoutSolution {
         specialOffers.put('A', "3A for 130");
         specialOffers.put('B', "2B for 45");
 
-        char[] charList = skus.toCharArray();
-        Character[] charObjectArray = java.util.Arrays.toObject(charList);
-
         Map<java.lang.Character, java.lang.Integer> count = new java.util.HashMap<>();
 
-        for(int i = 0; i < charList.length; i++){
-            if(!prices.containsKey(charList[i])){
+        for(int i = 0; i < skus.toCharArray().length; i++){
+            if(!prices.containsKey(skus.toCharArray()[i])){
                 return -1;
             }
-            if(count.containsKey(charList[i])){
-                count.put(charList[i], count.get(charList[i])+1);
+            if(count.containsKey(skus.toCharArray()[i])){
+                count.put(skus.toCharArray()[i], count.get(skus.toCharArray()[i])+1);
             }else{
-                count.put(charList[i], 1);
+                count.put(skus.toCharArray()[i], 1);
             }
         }
 
@@ -54,7 +51,7 @@ public class CheckoutSolution {
                     totalCost += (countValue/offerQuantity) * offerPrice;
                     totalCost += (countValue%offerQuantity) * prices.get(item);
                 }else{
-                    totalCost += count * prices.get(item);
+                    totalCost += countValue * prices.get(item);
                 }
             }
         }
@@ -63,6 +60,7 @@ public class CheckoutSolution {
     }
 
 }
+
 
 
 
