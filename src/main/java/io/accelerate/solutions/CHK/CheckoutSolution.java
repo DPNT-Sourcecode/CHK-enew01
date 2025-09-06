@@ -4,33 +4,33 @@ import io.accelerate.runner.SolutionNotImplementedException;
 
 public class CheckoutSolution {
 
-    public Map<char, int> prices = new HashMap<>();
+
+
+    public Integer checkout(String skus) {
+
+        Map<char, int> prices = new HashMap<>();
         prices.put("A", 50);
         prices.put('B', 30);
         prices.put('C', 20);
         prices.put('D', 15);
 
-     public   Map<char, String> specialOffers = new HashMap<>();
+        Map<char, String> specialOffers = new HashMap<>();
         specialOffers.put('A', "3A for 130");
         specialOffers.put('B', "2B for 45");
-
-    public Integer checkout(String skus) {
-
-
 
 
         charList = skus.toCharArray();
 
-        Map<char, int> count = new HashMap<>();
+        Map<char, Integer> count = new HashMap<>();
 
         for(int i = 0; i < charList.length(); i++){
             if(!prices.containsKey(charList[i])){
                 return -1;
             }
             if(count.containsKey(charList[i])){
-                count.put(char, count.get(charList[i])+1))
+                count.put(charList[i], count.get(charList[i])+1);
             }else{
-                count.put(char, 1)
+                count.put(charList[i], 1);
             }
         }
 
@@ -63,5 +63,3 @@ public class CheckoutSolution {
         return totalCost;
     }
 }
-
-
